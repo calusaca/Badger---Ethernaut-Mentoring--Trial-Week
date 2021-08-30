@@ -1,0 +1,17 @@
+# exclude SafeMath when calculating test coverage
+# https://eth-brownie.readthedocs.io/en/v1.10.3/config.html#exclude_paths
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+compiler:
+  solc:
+    remappings:
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
+dotenv: .env
+networks:
+  default: development
+  kovan: active
+wallets:
+  from_key: ${PRIVATE_KEY}
+reports:
+  exclude_contracts:
+    - SafeMath
